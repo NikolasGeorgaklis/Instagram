@@ -206,11 +206,11 @@
             </objects>
             <point key="canvasLocation" x="3900.0000000000005" y="-621.42857142857144"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="18S-TZ-7qw">
             <objects>
                 <navigationController id="cTf-vg-ubQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="E2j-ZG-u9j"/>
+                    <tabBarItem key="tabBarItem" title="" image="plus.app" catalog="system" selectedImage="plus.app" id="E2j-ZG-u9j"/>
                     <navigationItem key="navigationItem" id="kXe-WO-Bqe"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wTW-bs-7AL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -288,11 +288,11 @@
             </objects>
             <point key="canvasLocation" x="983" y="76"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="paX-gL-ryV">
             <objects>
                 <navigationController storyboardIdentifier="navViewController" automaticallyAdjustsScrollViewInsets="NO" id="M5R-KF-T6C" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="zU9-1J-lBk"/>
+                    <tabBarItem key="tabBarItem" title="" image="feed_tab" selectedImage="feed_tab" id="zU9-1J-lBk"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nuo-TN-4oe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -309,11 +309,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="npT-55-Pkh"/>
+        <segue reference="FPi-Ue-u0k"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="feed_tab" width="25" height="25"/>
         <image name="image_placeholder" width="375" height="375"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="plus.app" catalog="system" width="128" height="114"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
