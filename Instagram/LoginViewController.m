@@ -60,7 +60,10 @@
         } else {
             NSLog(@"User logged in successfully");
             // display view controller that needs to shown after successful login
-            [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+//            [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UIViewController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
+            self.view.window.rootViewController = tabBarController;
         }
     }];
 }

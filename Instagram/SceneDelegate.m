@@ -20,13 +20,13 @@
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     // Code to initialize Parse
-        // (See above section 'Parse `initializeWithConfiguration` vs `setApplicationId`', if you have not already set it up)
+    // (See above section 'Parse `initializeWithConfiguration` vs `setApplicationId`', if you have not already set it up)
+    
+    if (PFUser.currentUser) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         
-        if (PFUser.currentUser) {
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            
-            self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"navViewController"];
-        }
+        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
+    }
 }
 
 
