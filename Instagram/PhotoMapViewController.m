@@ -7,6 +7,7 @@
 
 #import "PhotoMapViewController.h"
 #import "Post.h"
+#import <Parse/Parse.h>
 
 @interface PhotoMapViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *selectedImage;
@@ -65,6 +66,8 @@
 }
 - (IBAction)didTapPost:(id)sender {
     NSLog(@"tapped post");
+    NSLog(@"%@", self.selectedImage.image);
+    NSLog(@"%@", self.caption.text);
     [Post postUserImage:self.selectedImage.image withCaption:self.caption.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
             if(succeeded) {
                 NSLog(@"Successfully posted image!");

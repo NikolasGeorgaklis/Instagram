@@ -230,9 +230,6 @@
                                     <action selector="didTapPost:" destination="nF2-zt-tNs" eventType="touchUpInside" id="u2I-rK-fFn"/>
                                 </connections>
                             </button>
-                            <connections>
-                                <action selector="didTapPost:" destination="nF2-zt-tNs" id="pCk-KM-HSr"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
