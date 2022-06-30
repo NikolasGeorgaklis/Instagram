@@ -53,7 +53,7 @@
                     <connections>
                         <outlet property="password" destination="peR-tE-IEN" id="eOP-CR-x2J"/>
                         <outlet property="username" destination="mhQ-nc-vMd" id="Pqb-OC-16v"/>
-                        <segue destination="vM2-t7-Y34" kind="presentation" id="Xgf-YV-7Mf"/>
+                        <segue destination="vM2-t7-Y34" kind="presentation" identifier="loginSegue" id="Xgf-YV-7Mf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
