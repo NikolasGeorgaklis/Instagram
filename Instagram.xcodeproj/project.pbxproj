@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		43AC077F286CEA2A0009FEA0 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AC077E286CEA2A0009FEA0 /* Post.m */; };
 		43AC0782286CF66E0009FEA0 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AC0781286CF66E0009FEA0 /* PostCell.m */; };
+		43AC0785286E1F360009FEA0 /* PostDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AC0784286E1F360009FEA0 /* PostDetailsViewController.m */; };
 		43ADB115286A4C1600CC266B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43ADB114286A4C1600CC266B /* AppDelegate.m */; };
 		43ADB118286A4C1600CC266B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43ADB117286A4C1600CC266B /* SceneDelegate.m */; };
 		43ADB11E286A4C1600CC266B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43ADB11C286A4C1600CC266B /* Main.storyboard */; };
@@ -52,6 +53,8 @@
 		43AC077E286CEA2A0009FEA0 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		43AC0780286CF66E0009FEA0 /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
 		43AC0781286CF66E0009FEA0 /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
+		43AC0783286E1F360009FEA0 /* PostDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostDetailsViewController.h; sourceTree = "<group>"; };
+		43AC0784286E1F360009FEA0 /* PostDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostDetailsViewController.m; sourceTree = "<group>"; };
 		43ADB110286A4C1600CC266B /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43ADB113286A4C1600CC266B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		43ADB114286A4C1600CC266B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 				43ADB125286A4C1800CC266B /* main.m */,
 				43ADB148286A75F500CC266B /* LoginViewController.h */,
 				43ADB149286A75F500CC266B /* LoginViewController.m */,
+				43AC0783286E1F360009FEA0 /* PostDetailsViewController.h */,
+				43AC0784286E1F360009FEA0 /* PostDetailsViewController.m */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -442,6 +447,7 @@
 				43ADB14A286A75F500CC266B /* LoginViewController.m in Sources */,
 				43ADB14D286ACEF600CC266B /* HomeViewController.m in Sources */,
 				43AC077F286CEA2A0009FEA0 /* Post.m in Sources */,
+				43AC0785286E1F360009FEA0 /* PostDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +624,8 @@
 				DEVELOPMENT_TEAM = CZ5U2S73YA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Instagram/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need camera access to take pictures";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Need library access to upload images";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -628,7 +636,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.Instagram;
+				PRODUCT_BUNDLE_IDENTIFIER = com.niko.Instagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -646,6 +654,8 @@
 				DEVELOPMENT_TEAM = CZ5U2S73YA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Instagram/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need camera access to take pictures";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Need library access to upload images";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -656,7 +666,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.Instagram;
+				PRODUCT_BUNDLE_IDENTIFIER = com.niko.Instagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";

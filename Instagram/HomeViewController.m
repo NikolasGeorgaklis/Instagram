@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 #import "PostCell.h"
 #import "PhotoMapViewController.h"
+#import "PostDetailsViewController.h"
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic)NSArray *postsArray;
@@ -77,8 +78,8 @@
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
     cell.post = self.postsArray[indexPath.row];
     
+    [cell.post.author fetchIfNeeded];
     [cell setPost];
-    
     return cell;
 }
 
@@ -86,21 +87,22 @@
     return self.postsArray.count;
 }
 
-/*
 
-#pragma mark - Navigation
+
+//#pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if([[segue identifier] isEqualToString:@"composeSegue"]){
-        UINavigationController *navigationController = [segue destinationViewController];
-        PhotoMapViewController *photoController = (PhotoMapViewController*)navigationController.topViewController;
-        photoController.delegate = self;
+    if([[segue identifier] isEqualToString:@"details"]){
+        PostDetailsViewController *detailsVC = [segue destinationViewController];
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        detailsVC.post = self.postsArray[indexPath.row];
+        NSLog(@"%@", detailsVC.post);
     }
 }
-*/
+
 
 
 @end
