@@ -123,6 +123,7 @@
                                         <connections>
                                             <outlet property="caption" destination="uJD-Py-xMg" id="3am-2r-Ycr"/>
                                             <outlet property="photoImageView" destination="fZx-MW-htJ" id="5PO-jY-5gj"/>
+                                            <outlet property="timestamp" destination="QID-Wy-Rdu" id="NMI-Bi-gkS"/>
                                             <segue destination="8z9-Pc-rNg" kind="presentation" identifier="details" id="TCi-HG-fex"/>
                                         </connections>
                                     </tableViewCell>
