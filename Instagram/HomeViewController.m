@@ -25,13 +25,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    [self getPosts];
     
-    [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
-    [self.tableView insertSubview:refreshControl atIndex:0];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(getPosts) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
 }
 
 - (IBAction)logOut:(id)sender {
@@ -48,9 +51,9 @@
 
 -(void)getPosts{
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-    [query includeKey:@"author"];
-    [query includeKey:@"createdAt"];
-    [query includeKey:@"likeCount"];
+   // [query includeKey:@"author"];
+//    [query includeKey:@"createdAt"];
+//    [query includeKey:@"likeCount"];
     [query orderByDescending:@"createdAt"];
     
     
@@ -61,15 +64,20 @@
         if (posts != nil) {
             // do something with the array of object returned by the call
             self.postsArray = posts;
-            
+            [self.tableView reloadData];
+            NSLog(@"%@", self.postsArray);
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
+        [self.refreshControl endRefreshing];
     }];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
+    PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
+    cell.post = self.postsArray[indexPath.row];
+    
+    [cell setPost];
     
     return cell;
 }

@@ -19,10 +19,14 @@
 
     // Configure the view for the selected state
 }
-- (void)setPost:(Post *)post {
-    _post = post;
-    self.photoImageView.file = post[@"image"];
-    [self.photoImageView loadInBackground];
+- (void)setPost {
+    NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:self.post.image.url]];
+    self.photoImageView.image = [UIImage imageWithData:imageData];
+    
+    self.caption.text = self.post.caption;
+    
+//    self.photoImageView.file = self.post[@"image"];
+//    [self.photoImageView loadInBackground];
 }
 
 

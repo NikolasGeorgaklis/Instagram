@@ -14,11 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PostCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet PFImageView *photoImageView;
-@property (weak, nonatomic) IBOutlet UILabel *author;
 @property (weak, nonatomic) IBOutlet UILabel *caption;
 
 @property (strong, nonatomic) Post *post;
-
+- (void) setPost;
 
 @end
 
